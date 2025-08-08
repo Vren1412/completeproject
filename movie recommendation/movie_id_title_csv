@@ -1,0 +1,16 @@
+user_id,movie_id,movie_title,rating
+1,101,The Shawshank Redemption,5
+2,102,The Godfather,5
+3,103,The Dark Knight,4.5
+4,104,12 Angry Men,4
+5,105,Schindler's List,5
+1,103,The Dark Knight,4
+2,105,Schindler's List,4.5
+3,101,The Shawshank Redemption,5
+4,102,The Godfather,4
+5,104,12 Angry Men,4.5
+1,105,Schindler's List,5
+2,101,The Shawshank Redemption,4.5
+3,102,The Godfather,4
+4,103,The Dark Knight,5
+5,101,The Shawshank Redemption,4
