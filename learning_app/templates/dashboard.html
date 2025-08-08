@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-sans">
+
+    <div class="flex items-center justify-center min-h-screen">
+        <form method="post" action="/update_dashboard/{{ user.id }}" class="bg-white p-8 rounded-xl shadow-xl w-full max-w-xl">
+            <h2 class="text-3xl font-bold text-center text-green-600 mb-8">Welcome to Your Dashboard</h2>
+
+            <div class="mb-4">
+                <label class="block font-semibold mb-1">User ID</label>
+                <input type="text" name="user_id" value="{{ user.user_id }}" readonly class="w-full p-2 border border-gray-300 rounded-md bg-gray-100 cursor-not-allowed">
+            </div>
+
+            <div class="mb-4">
+                <label class="block font-semibold mb-1">User Name</label>
+                <input type="text" name="name" value="{{ user.name }}" class="w-full p-2 border border-gray-300 rounded-md" required>
+            </div>
+
+            <div class="mb-4">
+                <label class="block font-semibold mb-1">Password</label>
+                <input type="password" name="password" value="{{ user.password }}" class="w-full p-2 border border-gray-300 rounded-md" required>
+            </div>
+
+            <div class="mb-4">
+                <label class="block font-semibold mb-1">Select Your Preferences</label>
+                <select name="course_interest" class="w-full p-2 border border-gray-300 rounded-md" multiple size="5">
+                    <option value="Python" {% if "Python" in user.course_interest %}selected{% endif %}>Python</option>
+                    <option value="Java" {% if "Java" in user.course_interest %}selected{% endif %}>Java</option>
+                    <option value="C++" {% if "C++" in user.course_interest %}selected{% endif %}>C++</option>
+                    <option value="Web Development" {% if "Web Development" in user.course_interest %}selected{% endif %}>Web Development</option>
+                    <option value="Machine Learning" {% if "Machine Learning" in user.course_interest %}selected{% endif %}>Machine Learning</option>
+                    <option value="Data Structures" {% if "Data Structures" in user.course_interest %}selected{% endif %}>Data Structures</option>
+                    <option value="Android Development" {% if "Android Development" in user.course_interest %}selected{% endif %}>Android Development</option>
+                    <option value="Cybersecurity" {% if "Cybersecurity" in user.course_interest %}selected{% endif %}>Cybersecurity</option>
+                    <option value="DevOps" {% if "DevOps" in user.course_interest %}selected{% endif %}>DevOps</option>
+                    <option value="Cloud Computing" {% if "Cloud Computing" in user.course_interest %}selected{% endif %}>Cloud Computing</option>
+                </select>
+                <p class="text-sm text-gray-500 mt-1">Hold Ctrl (Windows) or Cmd (Mac) to select multiple preferences.</p>
+            </div>
+
+            <button type="submit" class="w-full bg-green-600 text-white py-2 px-4 rounded-md hover:bg-green-700 transition">
+                Update Dashboard
+            </button>
+        </form>
+    </div>
+
+</body>
+</html>
